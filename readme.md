@@ -1,13 +1,9 @@
-1. Project Overview
-2. Architecture
-3. AWS Services
-4. Data Lake / Data Quality
-5. Incremental Ingestion
-6. Workflow
-7. Gold Analytics
-8. Key Challenges & Solutions
-9. Validation
-10. Limitations / Future Improvements
+
+## RetailLake
+
+An AWS-based retail data engineering pipeline built using Amazon S3, AWS Glue, Glue Data Catalog and Amazon Athena.
+RetailLake processes raw retail datasets through a Raw → Silver → Gold architecture. The project focuses on data quality, incremental file ingestion, transformation, orchestration and analytical data preparation.
+
 
 ## Project Overview
 
@@ -147,7 +143,7 @@ CustomerJob ──┐
 ProductJob  ──┼──► ordersJob ──┬──► PaymentsJob
 CoupansJob  ──┘                └──► ReturnsJob
 
-
+```
 ## Gold Analytics
 
 The Gold layer contains six analytical datasets created from the validated Silver data.
@@ -186,7 +182,7 @@ format_options={
 }
 
 
----
+```
 
 ## 9. Validation
 
@@ -201,6 +197,7 @@ The final Silver datasets were checked for:
 - Duplicate behavior
 - Schema correctness
 - Quarantine output
+```
 
 ### Final Silver Counts
 
