@@ -195,8 +195,6 @@ The physical Gold dataset initially contained fewer records than the Silver Orde
 
 **Solution:** Compared the SQL result with the physical Gold table, identified the stale table definition, refreshed the Gold dataset, and verified the final row count.
 
-## 9. Validation
-
 
 ## Validation
 
