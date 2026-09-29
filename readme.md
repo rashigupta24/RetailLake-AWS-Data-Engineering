@@ -55,10 +55,8 @@ flowchart TD
 
 This reflects the workflow and AWS Glue handles the processing while Crawlers maintain the metadata needed by Athena.
 
-## 3. AWS Services
+##  AWS Services
 
-
-## AWS Services
 
 | AWS Service | How I Used It |
 |---|---|
@@ -183,10 +181,23 @@ format_options={
 
 
 ```
+### Mixed Numeric JSON Types
+
+Some JSON numeric fields were inferred differently across files, such as:
+
+`struct<double: DOUBLE, int: INT>`
+
+**Solution:** Used `coalesce()` to safely handle both numeric representations and cast the result to `double`.
+
+### Stale Gold Table
+
+The physical Gold dataset initially contained fewer records than the Silver Orders dataset.
+
+**Solution:** Compared the SQL result with the physical Gold table, identified the stale table definition, refreshed the Gold dataset, and verified the final row count.
 
 ## 9. Validation
 
-```markdown
+
 ## Validation
 
 The final Silver datasets were checked for:
@@ -197,10 +208,10 @@ The final Silver datasets were checked for:
 - Duplicate behavior
 - Schema correctness
 - Quarantine output
-```
+
 
 ### Final Silver Counts
-
+```mermaid
 | Dataset | Records |
 |---|---:|
 | Customers | 1,897 |
@@ -209,7 +220,7 @@ The final Silver datasets were checked for:
 | Orders | 5,746 |
 | Payments | 4,612 |
 | Returns | 1,162 |
-
+```
 The Gold datasets were also checked for data availability, key uniqueness, basic metric correctness, enrichment, sample records, and reconciliation against Silver where applicable.
 
 
