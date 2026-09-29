@@ -211,7 +211,7 @@ The final Silver datasets were checked for:
 
 
 ### Final Silver Counts
-```mermaid
+
 | Dataset | Records |
 |---|---:|
 | Customers | 1,897 |
@@ -220,7 +220,7 @@ The final Silver datasets were checked for:
 | Orders | 5,746 |
 | Payments | 4,612 |
 | Returns | 1,162 |
-```
+
 The Gold datasets were also checked for data availability, key uniqueness, basic metric correctness, enrichment, sample records, and reconciliation against Silver where applicable.
 
 
